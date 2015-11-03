@@ -1,0 +1,175 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>Help Pal</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="old stylesheet" href="lib/jquery.mobile-1.4.5.min.css" />
+	<link rel="newest stylesheet" type="text/css" href="css/style.css" />
+	
+	<script src="lib/jquery-2.1.1.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="lib/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+	<div data-role="page" id="page-welcome" class="welcomePage">
+		<div role="main" class="ui-content">
+			<div id="appLogo" class="welcome-logo" ></div>
+			
+			<div class="buttons">
+				<a href="#page-signup" data-role="button" data-inline="true" class="welcome-button">Sign Up</a>
+				<a href="#page-login" data-role="button" data-inline="true" class="welcome-button" data-transition="slide" data-direction="forward">Login</a>
+			</div>
+			
+			<div class="divider"><div>OR</div></div>
+			
+			<p >Sign up with</p>
+			<div class="buttons social-btn">
+				<a id="btn-fb" data-role="button" data-inline="true" data-icon="fb-icon" data-iconpos="notext" class="social-icon">Facebook</a>
+				<a href="index.html" data-role="button" data-inline="true" data-icon="twitter-icon" data-iconpos="notext" class="social-icon">Twitter</a>
+				<a href="index.html" data-role="button" data-inline="true" data-icon="google-icon" data-iconpos="notext" class="social-icon">Google+</a>
+			</div>
+		</div>
+	</div>
+	
+	<div data-role="page" id="page-signup" class="signupPage">
+		<div data-role="header" data-position="fixed" data-tap-toggle="false" >
+			<a href="#page-welcome" class="backBtn" data-iconpos="notext" data-transition="slide" data-direction="reverse"><span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span> </a>
+			<h1>Sign Up</h1>
+		</div>
+		<div role="main" class="ui-content">
+			<form method="POST" id="form-signup" class="form-signup">
+				<div data-role="fieldcontain">
+					<img class="text-icon" src="img/user.png" />
+					<input id="txt-name" name="name" class="input" placeholder="Name" type="text" />
+				</div>
+				<div data-role="fieldcontain">
+					<img class="text-icon" src="img/phone.png" />
+					<input id="txt-phone" name="contact" class="input" placeholder="Phone" type="tel" />
+				</div>
+				<div data-role="fieldcontain">
+					<img class="text-icon" src="img/mail.png" />
+					<input id="txt-email" name="email" class="input" placeholder="Email" type="email" />
+				</div>
+				<div data-role="fieldcontain">
+					<img class="text-icon" src="img/password.png" />
+					<input id="txt-password" name="password" class="input" placeholder="Password" type="password"/>
+				</div>
+				
+				<label>
+					<input id="chkVisible" type="checkbox" name="visible" onchange="handleVisibility(event)">Make me visible
+				</label>
+				
+				<label>
+					<input id="chkTerms" type="checkbox">Accept terms & Conditions
+				</label>
+				
+				<button id="btn-signUp" class="signup-button" data-transition="slide" data-direction="forward" type="submit">Sign Up</button>	
+				<!-- <a id="btn-signUp" data-role="button" class="signup-button" data-transition="slide" data-direction="forward">Sign Up</a> -->
+	
+				<div data-role="fieldcontain" class="login-grp">
+					<label class="text" for="login-link">Already a User?</label>
+					<a href="#page-login" id="login-link" name="login-link" data-role="button" class="login-link" data-transition="slide" data-direction="forward">Login</a>
+				</div>
+			</form>
+		</div>	
+	</div>
+	<div data-role="page" id="page-login" class="loginPage">
+		<div data-role="header" class="headerDiv" data-position="fixed" data-tap-toggle="false" >
+			<a href="#page-welcome" class="backBtn" data-iconpos="notext" data-transition="slide" data-direction="reverse"><span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span> </a>
+			<h1>Login</h1>
+		</div>
+		<div role="main" class="ui-content">
+			<div data-role="fieldcontain">
+				<img class="text-icon" src="img/mail.png" />
+				<input id="txt-email" class="input" placeholder="Email" type="email" />
+			</div>	
+			<div data-role="fieldcontain">
+				<img class="text-icon" src="img/password.png" />
+				<input id="txt-password" class="input" placeholder="Password" type="password"/>
+			</div>
+			
+			<a id="btnLogin" data-role="button" class="loginBtn" data-transition="slide" data-direction="forward">Login</a>
+						
+			<a href="#page-forgot" data-role="button" class="forgotPassBtn" >Forgot Password</a>
+			
+			<div data-role="fieldcontain" class="signup-grp">
+				<label class="text" for="signup-link">New User?</label>
+				<a href="#page-signup" id="signup-link" name="signup-link" data-role="button" class="signup-link" data-transition="slide" data-direction="forward">Sign up</a>
+			</div>			
+		</div>
+	</div>
+	
+	<div data-role="page" id="page-forgot" class="forgotPage" >
+		<div data-role="header" class="headerDiv" data-position="fixed">
+			<a href="#page-login" class="backBtn" data-iconpos="notext" data-transition="slide" data-direction="reverse"><span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span> </a>
+			<h1>Forgot Password</h1>
+		</div>
+		<div data-role="main" class="ui-content">
+			<h2 class="subTitle">A temporary password wii be send your registered email address.</h2>
+			<form id="forgotPassForm" class="forgotpassform" method="POST">
+				<div class="emailDiv">
+					<input type="text" id="inpForgotUsername" name="username" placeholder="User Name" autocomplete="off" >
+				</div>
+				<button type="submit" id="btnForgotSubmit" class="btnSumbit" data-role="button"> Submit </button>
+			</form>
+		</div>
+	</div>
+	
+	<div data-role="page" id="page-home" class="homePage">
+		<div class="panel" data-role="panel" data-position="left" data-display="push" id="side-menu">
+			<ul>
+				<li><a href="#" id="btnLogout" class="logoutBtn" data-iconpos="notext" data-transition="slide" data-direction="reverse">LOGOUT</a></li>
+			</ul>
+		</div>
+		<div data-role="header" class="headerDiv" data-position="fixed" data-tap-toggle="false" >
+			<a id="leftSideMenu" href="#side-menu" class="iconBtn backBtn" data-iconpos="notext"> <span aria-hidden="true" class="glyphicon glyphicon-menu-hamburger"></span> </a>
+			<h1>Home</h1>
+			<a href="#page-search" class="iconBtn" data-iconpos="notext"> <span aria-hidden="true" class="glyphicon glyphicon-search"></span> </a>
+		</div>
+	</div>
+		
+	<div data-role="page" id="page-search" class="searchScreen">
+		<div data-role="header" class="headerDiv" data-position="fixed" data-tap-toggle="false" >
+			<a href="#page-home" class="backBtn" data-iconpos="notext" data-transition="slide" data-direction="reverse"><span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span> </a>
+			<h1>Search</h1>
+			<a href="#page-search" id="btnSearch" data-icon="search" data-iconpos="notext"></a>
+		</div>
+		<div role="main" class="ui-content">
+			<div class="skillsTab" data-role="tabs" id="tabs">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#tabUser" data-ajax="false">User</a></li>
+						<li><a href="#tabLocation" data-ajax="false">Location</a></li>
+					</ul>
+				</div>
+				<div id="tabUser" class="tabUser">
+					<ul data-role="listview" data-inset="true">
+						<li> <span class="skills"> Acura1 </span> <span class="skillRating"> rating bar</span></li>
+						<li> <span class="skills"> Audi1 </span> <span class="skillRating"> rating bar</span></li>
+						<li> <span class="skills"> BMW1 </span> <span class="skillRating"> rating bar</span></li>
+						<li> <span class="skills"> Cadillac11</span> <span class="skillRating"> rating bar</span></li>
+						<li> <span class="skills"> Ferrari1</span> <span class="skillRating"> rating bar</span></li>
+					</ul>
+				</div>
+				<div id="tabLocation" class="tabLocation">
+					<ul data-role="listview" data-inset="true">
+						<li> <span class="skills"> Professional Acura1 </span> <span class="skillRating"> rating bar</span></li>
+						<li> <span class="skills"> Professional Audi1 </span> <span class="skillRating"> rating bar</span></li>
+						<li> <span class="skills"> Professional BMW1 </span> <span class="skillRating"> rating bar</span></li>
+						<li> <span class="skills"> Professional Cadillac11</span> <span class="skillRating"> rating bar</span></li>
+						<li> <span class="skills"> Professional Ferrari1</span> <span class="skillRating"> rating bar</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+<script src="cordova.js"></script>
+<script>
+	function handleVisibility(oEvent) {
+		var cb = oEvent.target;
+		cb.value = cb.checked ? 1: 0;
+	}
+</script>
+</body>
+</html>
