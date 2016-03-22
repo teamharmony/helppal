@@ -1,3 +1,254 @@
 @import url(../fonts/font.css);
 @import url(//fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic);
 @import url(//fonts.googleapis.com/css?family=Roboto:400,300,500,400italic,700,900);
+
+body{
+	font-style: normal;
+  background: #ffffff;
+}
+body, input, select, textarea, button,.ui-btn,h1,h2,h3,h4,h5,h6 {
+	font-family: "RobotoDraft","Roboto","Helvetica Neue",sans-serif;
+	font-weight: 400;
+	font-size: .889em;
+}
+
+.ui-overlay-a, .ui-page-theme-a { 
+background: #ffffff;
+}
+.ui-field-contain{ 
+	border:0;
+	padding: .4em 0;
+}
+
+.ui-page-theme-a .ui-link,
+.ui-page-theme-a .ui-link:visited { 
+	color:#01aba8;
+	font-size:1em;
+}
+
+/******************* Header  ***************/
+.ui-header.headerDiv {
+    height: 55px;
+    padding: .0em .85em;
+    box-sizing: border-box;
+    background: #01aba8;
+}
+.ui-header .ui-title {
+    color: #fff;
+    text-shadow: 0 1px 0 #333;
+    font-size: 1.5em;
+    line-height: 1;
+    letter-spacing: .02em;
+    margin: 0 46px;
+}
+.ui-page-theme-a .ui-header .ui-btn {
+    background-color: #01aba8;
+    border-color: transparent;
+    color: #fff;
+    text-shadow: 0 1px 0 #333;
+    margin-left: 5px;
+    font-size: 1.25rem;
+    padding: .5rem .7rem;
+    box-shadow: none;
+}
+/****************** Input **********************/
+.ui-page-theme-a .ui-input-text {
+    border-color: #CBCFDD;
+	    box-shadow: none;
+}
+.ui-input-text > .input{
+    height: 2.75em;
+    background-position: 98% center;
+    background-repeat: no-repeat;
+    font-size: 0.889em;
+    padding: .5em 2.2em .5em 1em;
+    line-height: normal;
+}
+.ui-input-text > .input.email {
+    background-image: url(../images/email.png);
+    background-size: 19px;
+}
+.ui-input-text > .input.password {
+    background-image: url(../images/password.png);
+    background-size: 13px;
+}
+
+.ui-checkbox  label.ui-btn,
+.ui-checkbox  label.ui-btn:hover { 
+    background: transparent;
+    border: 0;
+    font-size: 1em;
+	font-weight: normal;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+.ui-checkbox .ui-icon-check:after,
+.ui-checkbox  label.ui-btn:after { 
+ background: transparent;
+ background-image: none !important;
+}
+
+/***************** buttons ********************/
+/* link button */
+.ui-btn.ui-corner-all.signUpBtn,
+.ui-btn.ui-corner-all.loginBtn {
+   border-radius: 3px;
+   padding: 0.5em 1em;
+   box-sizing: border-box;
+   font-size:1em;
+}
+.welcomePage .ui-btn.ui-corner-all.signUpBtn,
+.welcomePage .ui-btn.ui-corner-all.loginBtn{ 
+     width: 46%;
+}
+.ui-btn.ui-corner-all.loginBtn,
+.ui-btn.ui-corner-all.btnSumbit { 
+ background:#01aba8;
+ border:1px solid #058987;
+ color:#fff;
+ text-shadow:0 1px 0 #333;
+}
+.ui-btn.loginBtn:hover,
+.ui-btn.loginButton:hover,
+.ui-btn.btnSumbit:hover{ 
+ background:#058987;
+ color:#fff;
+ text-shadow:0 1px 0 #333;
+}
+
+/* buttons */
+.ui-btn.signUpButton,
+.ui-btn.btnSumbit  { 
+ background:#01aba8;
+ border:1px solid #058987;
+ color:#fff;
+ text-shadow:0 1px 0 #333;
+ border-radius: 3px;
+   padding: 0.5em 1em;
+   box-sizing: border-box;
+   font-size:1em;
+   font-weight: 700;
+}
+.ui-btn.signUpButton:hover,
+.ui-btn.btnSumbit:hover{ 
+ background:#058987;
+ color:#fff;
+ text-shadow:0 1px 0 #333;
+}
+
+/**************** tabs *******************/
+
+.ui-navbar .ui-tabs-nav .ui-btn { 
+	border-color:#01aba8;
+	box-shadow: none;
+}
+.ui-navbar .ui-tabs-nav .ui-btn.ui-btn-active{
+	background:#01aba8;
+	box-shadow: none;
+}
+
+
+/******************* Welcome  ****************/
+.welcome-logo, .welcomePage .buttons, .social-btn, .divider {
+    text-align: center;
+    padding: 0px 0 1em 0;
+}
+.welcome-logo { padding-top: 25%; }
+.divider.line { margin-top:10%; }
+.welcomePage .ui-btn.ui-corner-all.loginBtn { margin-right:0; }
+.social-icon {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    border: none;
+    cursor: pointer;
+    height: 5em;
+    width: 5em;
+}
+.ui-btn-icon-notext:after { background: transparent; }
+.ui-icon-fb-icon {
+    background-image: url('../images/fb_icon.png');
+}
+.ui-icon-google-icon {
+    background-image: url('../images/googleplus_icon.png');
+}
+.ui-icon-twitter-icon {
+    background-image: url('../images/twitter_icon.png');
+}
+
+//added by lokesh
+.invalidState {
+    border: 2px solid red !important;
+}
+.display-none {
+    display: none;
+}
+#error {
+   color: red;
+    position: relative;
+    margin: 0;
+        height: 16px;
+        font-size:0.7em;
+}
+
+/* button upload*/
+.profilePic {
+    text-align: center;
+}
+.profilePhoto {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+}
+.profilePic img {
+    border-radius: 0;
+    box-shadow: 1px 1px 2px #ccc;
+}
+.iconBtn.btnUpload {
+        height: 28px !important;
+    width: 28px !important;
+    position: absolute;
+    right: 0;
+    bottom: 4px;
+    margin: 0;
+    border-radius: 0;
+    opacity: 0.8;
+    border-top-left-radius: 7px;
+    font-size: 15px;
+    padding-top: 5px;
+    padding-left: 6px;
+}
+
+.lstProfilePicDiv{
+    -webkit-flex-shrink:0;
+    flex-shrink:0;
+}
+.lstProfilePic { 
+    width: 65px;
+    height: 65px;
+    border-radius: 50% !important;
+    border: 1px solid #cecece;
+}
+.list-name { 
+  -webkit-flex:auto;
+    flex:auto;
+    padding: 0 10px;
+    overflow: hidden
+}
+.ui-listview>li .lstInfoDiv > h1,
+.lstInfoDiv > p { 
+padding:3px 0; 
+margin:0;  
+white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; 
+        }
+.list-name { 
+font-size: 1.25em;
+}
+
+.list-email { 
+font-size: .8em;
+color:#aaaaaa;
+}
